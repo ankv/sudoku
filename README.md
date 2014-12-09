@@ -1,6 +1,10 @@
 # Sudoku
 
-TODO: Write a gem description
+This is a Ruby source code for suduko game.
+
+After installing this you can play a game of suduko on cosole.
+
+This code also demostrate a good use of ruby syntax and exception handling.
 
 ## Installation
 
@@ -20,7 +24,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+After installing just run the following from irb
+
+    $ require 'sudoku'
+    $ game = Sudoku::Engine.new
+    $ game.start
 
 ## Contributing
 
