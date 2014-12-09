@@ -49,16 +49,14 @@ module Sudoku
     def not_solved?
       return true if not_valid_rows?(@board) and not_valid_rows?(@board.transpose) 
       column, row = 0, 0
-      9.times do |i|
-        temp_row = @board[row][column..column+2]
-        temp_row = temp_row + @board[row+1][column..column+2]
-        temp_row = temp_row + @board[row+2][column..column+2]
-        if temp_row.uniq.size.eql?(9) then
+      9.times do
+        if !((@board[row][column..column+2]+@board[row+1][column..column+2]+@board[row+2][column..column+2]).uniq.size.eql?(9)) then
           return true
         end
         column += 3
         column %= 9
         if column.eql?(6) then row += 3 end
+        row %= 9
       end
       false
     end
