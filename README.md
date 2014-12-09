@@ -27,7 +27,9 @@ Or install it yourself as:
 After installing just run the following from irb
 
     $ require 'sudoku'
+
     $ game = Sudoku::Engine.new
+
     $ game.start
 
 ## Contributing

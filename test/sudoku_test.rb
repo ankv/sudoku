@@ -21,7 +21,7 @@ describe Sudoku::Engine do
     it "raise exception [cannot modify fixed cells] for input 1 1 9" do
       input = StringIO.new("1 1 9\n")
       suduko = Sudoku::Engine.new(input)
-      err = -> {suduko.process()}.must_raise Sudoku::SudokuInvalidInput
+      err = -> {suduko.process}.must_raise Sudoku::SudokuInvalidInput
       err.message.must_match "You can't overwrite a fixed cell"
     end
     it "returns 5 for input 1 3 5" do
@@ -56,22 +56,43 @@ describe Sudoku::Engine do
     end
   end
 
-  describe "Sudoku::EngineReader.gets" do
+  describe "Sudoku::SudokuReader.gets" do
     it "returns [1, 2, 3] for input 1 2 3" do
+      input = StringIO.new("1 2 3\n")
+      Sudoku::SudokuReader.gets(input).must_equal [1,2,3]
     end
     it "returns [1, 2, 3] for input 1 2 3 4 5" do
+      input = StringIO.new("1 2 3 4 5\n")
+      Sudoku::SudokuReader.gets(input).must_equal [1,2,3]
     end
     it "returns [1, 2, 3] for input 1 2 3 34 5342 234 sjfskjfskjf" do
+      input = StringIO.new("1 2 3 34 5342 234 sjfskjfskjf\n")
+      Sudoku::SudokuReader.gets(input).must_equal [1,2,3]
     end
     it "raise exception [Invalid input] for input 1 2" do
+      input = StringIO.new("1 2\n")
+      err = -> {Sudoku::SudokuReader.gets(input)}.must_raise Sudoku::SudokuInvalidInput
+      err.message.must_match "Incomplete Input"
     end
     it "raise exception [Invalid input] for input 1 2 10" do
+      input = StringIO.new("1 2 10\n")
+      err = -> {Sudoku::SudokuReader.gets(input)}.must_raise Sudoku::SudokuInvalidInput
+      err.message.must_match "Out Of Range"
     end
     it "raise exception [Invalid input] for input 1 10 2 2 3" do
+      input = StringIO.new("1 10 2 2 3\n")
+      err = -> {Sudoku::SudokuReader.gets(input)}.must_raise Sudoku::SudokuInvalidInput
+      err.message.must_match "Out Of Range"
     end
     it "raise exception [Invalid input] for input jsfkds sdjfsd fksdjf" do
+      input = StringIO.new("jsfkds sdjfsd fksdjf\n")
+      err = -> {Sudoku::SudokuReader.gets(input)}.must_raise Sudoku::SudokuInvalidInput
+      err.message.must_match "Out Of Range"
     end
     it "raise exception [Invalid input] for input " do
+      input = StringIO.new("\n")
+      err = -> {Sudoku::SudokuReader.gets(input)}.must_raise Sudoku::SudokuInvalidInput
+      err.message.must_match "Incomplete Input"
     end
   end
 end

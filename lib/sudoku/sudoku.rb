@@ -6,6 +6,7 @@ module Sudoku
     def self.gets(ios)
       arr = ios.readline.split(" ")
       raise SudokuInvalidInput.new("Incomplete Input") if arr.size < 3
+      arr = arr[0..2]
       arr.map! { |element| element.to_i }
       raise SudokuInvalidInput.new("Out Of Range") if arr.select { |element| not element.between?(1,9) }.size > 0
       arr
