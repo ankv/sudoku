@@ -48,11 +48,26 @@ describe Sudoku::Engine do
   end
 
   describe ".not_solved?" do
-    it "returns true for .board" do
-    end
-    it "returns true for .board" do
-    end
     it "returns false for .board" do
+      suduko = Sudoku::Engine.new
+      suduko.board = [[8,8,7,1,5,4,3,9,6],[9,6,5,3,2,7,1,4,8],[3,4,1,6,8,9,7,5,2],
+       [5,9,3,4,6,8,2,7,1],[4,7,2,5,1,3,6,8,9],[6,1,8,9,7,2,4,3,5],
+       [7,8,6,2,3,5,9,1,4],[1,5,4,7,9,6,8,2,3],[2,3,9,8,4,1,5,6,7]]
+      suduko.not_solved?.must_equal true
+    end
+    it "returns true for .board" do
+      suduko = Sudoku::Engine.new
+      suduko.board = [[8,2,7,1,5,4,3,9,6],[9,6,5,3,2,7,1,4,8],[3,4,1,6,8,9,7,5,2],
+       [5,9,3,4,6,8,2,7,1],[4,7,2,5,1,3,6,8,9],[6,1,8,9,7,2,4,3,5],
+       [7,8,6,2,3,5,9,1,4],[1,5,4,7,9,6,8,1,3],[2,3,9,8,4,1,5,6,7]]
+      suduko.not_solved?.must_equal true
+    end
+    it "returns true for .board" do
+      suduko = Sudoku::Engine.new
+      suduko.board = [[8,2,7,1,5,4,3,9,6],[9,6,5,3,2,7,1,4,8],[3,4,1,6,8,9,7,5,2],
+       [5,9,3,4,6,8,2,7,1],[4,7,2,5,1,3,6,8,9],[6,1,8,9,7,2,4,3,5],
+       [7,8,6,2,3,5,9,1,4],[1,5,4,7,9,6,8,2,3],[2,3,9,8,4,1,5,6,7]]
+      suduko.not_solved?.must_equal true
     end
   end
 
