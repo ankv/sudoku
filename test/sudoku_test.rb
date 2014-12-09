@@ -21,7 +21,7 @@ describe Sudoku::Engine do
     it "raise exception [cannot modify fixed cells] for input 1 1 9" do
       input = StringIO.new("1 1 9\n")
       suduko = Sudoku::Engine.new(input)
-      err = -> {suduko.process()}.must_raise Sudoku::EngineInvalidInput
+      err = -> {suduko.process()}.must_raise Sudoku::SudokuInvalidInput
       err.message.must_match "You can't overwrite a fixed cell"
     end
     it "returns 5 for input 1 3 5" do
