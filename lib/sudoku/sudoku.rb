@@ -47,7 +47,7 @@ module Sudoku
     end
 
     def not_solved?
-      return true if not_valid_rows?(@board) and not_valid_rows?(@board.transpose) 
+      return true if not_valid_rows?(@board) or not_valid_rows?(@board.transpose) 
       column, row = 0, 0
       9.times do
         temp = @board[row][column..column+2]
