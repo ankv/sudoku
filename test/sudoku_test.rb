@@ -1,7 +1,8 @@
-require 'test_helper'
-require 'stringio'
 require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start
+require 'test_helper'
+require 'stringio'
+
 
 describe Sudoku::Engine do
   before do
