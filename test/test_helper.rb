@@ -1,4 +1,4 @@
-require '/sudoku/sudoku'
+require 'sudoku/sudoku'
 require 'minitest/unit'
 require 'minitest/autorun'
 require 'minitest/pride'
