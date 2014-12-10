@@ -50,9 +50,10 @@ module Sudoku
       return true if not_valid_rows?(@board) and not_valid_rows?(@board.transpose) 
       column, row = 0, 0
       9.times do
-        if !((@board[row][column..column+2]+@board[row+1][column..column+2]+@board[row+2][column..column+2]).uniq.size.eql?(9)) then
-          return true
-        end
+        temp = @board[row][column..column+2]
+        temp += @board[row+1][column..column+2]
+        temp += @board[row+2][column..column+2]
+        return ture if (!temp.uniq.size.eql?(9))
         column += 3
         column %= 9
         if column.eql?(6) then row += 3 end
