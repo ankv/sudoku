@@ -40,4 +40,6 @@ After installing just run the following from irb
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
-[![Code Climate](https://codeclimate.com/repos/5485880f695680371e014f25/badges/4d6436b72c0a7eed3415/gpa.svg)](https://codeclimate.com/repos/5485880f695680371e014f25/feed) [![Test Coverage](https://codeclimate.com/repos/5485880f695680371e014f25/badges/4d6436b72c0a7eed3415/coverage.svg)](https://codeclimate.com/repos/5485880f695680371e014f25/feed) [![Circle CI](https://circleci.com/gh/ankv/sudoku.svg?style=svg)](https://circleci.com/gh/ankv/sudoku)
+[![Code Climate](https://codeclimate.com/repos/5485880f695680371e014f25/badges/4d6436b72c0a7eed3415/gpa.svg)](https://codeclimate.com/repos/5485880f695680371e014f25/feed) 
+[![Test Coverage](https://codeclimate.com/repos/5485880f695680371e014f25/badges/4d6436b72c0a7eed3415/coverage.svg)](https://codeclimate.com/repos/5485880f695680371e014f25/feed) 
+[![Circle CI](https://circleci.com/gh/ankv/sudoku.svg?style=svg)](https://circleci.com/gh/ankv/sudoku)
