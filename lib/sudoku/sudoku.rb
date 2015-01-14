@@ -8,7 +8,7 @@ module Sudoku
       raise SudokuInvalidInput.new("Incomplete Input") if arr.size < 3
       arr = arr[0..2]
       arr.map! { |element| element.to_i }
-      raise SudokuInvalidInput.new("Out Of Range") if arr.select { |element| not element.between?(1,9) }.size > 0
+      raise SudokuInvalidInput.new("Out Of Range") if arr.select { |element| not element.between?(0,9) }.size > 0
       arr
     end
   end
@@ -80,6 +80,6 @@ module Sudoku
   end
 end
 
-#game = Sudoku.new
+#game = Sudoku::Engine.new
 #game = Sudoku.new(File.new("/home/ankit/Desktop/input.txt"))
-#game.start_game
+#game.start
